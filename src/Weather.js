@@ -83,9 +83,9 @@ export default function Weather() {
       </div>
       <p className="link mt-3">
         This project is hosted on
-        <a href="https://weather-forecast-sc.netlify.app/">Netlify</a> and is
+        <a href="https://deft-youtiao-1ba786.netlify.app/">Netlify</a> and is
         open-sourced on
-        <a href="https://github.com/sansanthi/weather-forecast">Github</a>
+        <a href="https://github.com/sansanthi/weather-app-react">Github</a>
       </p>
     </div>
   );
