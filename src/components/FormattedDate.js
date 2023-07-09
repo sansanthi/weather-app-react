@@ -28,7 +28,7 @@ export default function FormattedDate(props) {
   var ampm = hours >= 12 ? "PM" : "AM";
   let time = `${hours}:${minutes} ${ampm}`;
   return (
-    <span>
+    <span className="day">
       {day}, {month} {date.getDate()}, {time}
     </span>
   );

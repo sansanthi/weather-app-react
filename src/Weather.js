@@ -13,8 +13,6 @@ export default function Weather() {
   }
 
   function showTemperature(response) {
-    console.log("Called");
-    console.log(response.data);
     setWeatherInfo({
       ready: true,
       coordinates: response.data.coord,
@@ -35,19 +33,25 @@ export default function Weather() {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
     axios.get(url).then(showTemperature);
   }
+
   if (weatherInfo.ready) {
     return (
       <div className="container weather-container d-flex flex-column align-items-center justify-content-center">
         <div className="wrapper rounded">
-          <header className="d-flex">
-            <form className="ms-auto d-flex" onSubmit={handleSubmit}>
+          <header>
+            <form
+              className="ms-md-auto d-flex justify-content-md-end"
+              onSubmit={handleSubmit}
+            >
               <input
                 type="text"
                 className="form-control bg-transparent"
                 placeholder="Search Another city"
                 onChange={handleCity}
               />
-              <button className="btn btn-primary ms-2">Search</button>
+              <button className="btn btn-primary ms-2 search-btn">
+                Search
+              </button>
             </form>
           </header>
           <WeatherInfo weatherInfo={weatherInfo} />

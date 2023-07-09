@@ -7,7 +7,7 @@ body {
   font-family: 'Red Hat Mono',
     monospace;
   font-weight: 400;
-  color: #fff;
+  color: #000;
   background: var(--bg-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,6 +28,10 @@ ul {
   padding: 0;
 }
 
+ul li {
+  line-height: 1rem;
+}
+
 .weather-container {
   height: 100vh;
   width: 100%;
@@ -38,7 +42,7 @@ ul {
 .wrapper {
   max-width: 1000px;
   background: #fff;
-  padding: 40px;
+  padding: 40px 10px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
@@ -47,8 +51,12 @@ ul {
   border-bottom: 1px solid #ececec;
 }
 
+input {
+  width: 100%;
+}
+
 .search-btn {
-  background: rgba(117, 69, 239, 0.8);
+  background: rgb(70, 41, 159);
   border-color: transparent;
   transition: all 200ms linear;
 }
@@ -57,27 +65,21 @@ ul {
   background: #7645EF;
 }
 
-#search-city {
-  background: transparent;
-  color: inherit;
+
+
+#city {
+  font-size: 32px;
 }
 
-#search-city::placeholder {
-  color: inherit;
+#temp {
+  font-size: 42px;
 }
 
-.weather-icon {
-  margin-right: 20px;
+#city,
+#temp {
+  color: rgb(70, 41, 159);
 }
 
-.icon-img {
-  width: 60px;
-}
-
-.weather-icon p {
-  text-align: center;
-  margin: 0;
-}
 
 #temperature {
   font-size: 64px;
@@ -91,13 +93,12 @@ ul {
 
 .day {
   font-size: 14px;
+  font-weight: 400;
   text-align: center;
   margin: 0;
+  color: #9474FF;
 }
 
-.icon {
-  width: 42px;
-}
 
 .link {
   color: rgba(39, 33, 66, .8);
@@ -105,4 +106,40 @@ ul {
 
 .link a {
   color: #7645EF;
+}
+
+li span {
+  color: #f18701;
+}
+
+.daily-container {
+  background: #E4DDFA;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.daily-container p {
+  font-size: 16px;
+}
+
+.daily-container span {
+  font-size: 14px;
+}
+
+.daily-icon {
+  height: 48px;
+}
+
+.daily-icon img {
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    padding: 40px;
+  }
+
+  .form-control {
+    width: auto;
+  }
 }
