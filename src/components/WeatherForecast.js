@@ -1,10 +1,13 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast({ coordinates }) {
   let [loading, setLoading] = useState(false);
   let [forecast, setForecast] = useState({});
+  useEffect(() => {
+    setLoading(false);
+  }, [coordinates]);
   function hanldeResponse(response) {
     setForecast(response.data.daily);
     setLoading(true);
